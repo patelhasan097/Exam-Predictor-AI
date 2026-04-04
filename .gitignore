@@ -1,0 +1,14 @@
+# Git Ignore  
+examenv/  
+__pycache__/  
+*.pyc  
+*.db  
+*.log  
+.env  
+data/raw_papers/*  
+data/processed/*  
+data/exports/*  
+!data/raw_papers/.gitkeep  
+!data/processed/.gitkeep  
+.DS_Store  
+Thumbs.db 

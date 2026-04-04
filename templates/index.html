@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ExamPredictor AI 🎯</title>
+  <link rel="stylesheet" href="/static/style.css"/>
+</head>
+<body>
+
+<!-- ============================================
+     NAVBAR
+     ============================================ -->
+<nav class="navbar">
+  <a href="#" class="nav-logo">🎯 ExamPredictor AI</a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#exams">Exams</a></li>
+    <li><a href="#analyzer" class="nav-cta">Analyze Now</a></li>
+  </ul>
+
+  <button class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- ============================================
+     HERO SECTION
+     ============================================ -->
+<section class="hero" id="home">
+  <div>
+    <div class="hero-badge">🤖 AI-Powered Exam Predictor</div>
+
+    <h1>
+      Predict Karo<br/>
+      <span>Agle Exam Mein</span><br/>
+      Kya Aayega
+    </h1>
+
+    <p>
+      PYQ Papers analyze karke AI batata hai
+      ki agle exam mein kaun sa topic aayega.
+      Smart study karo — time waste mat karo.
+    </p>
+
+    <div class="hero-btns">
+      <a href="#analyzer" class="btn btn-primary btn-lg">
+        🚀 Analysis Shuru Karo
+      </a>
+      <a href="#features" class="btn btn-outline btn-lg">
+        📖 Kaise Kaam Karta Hai
+      </a>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-item">
+        <h3>25+</h3>
+        <p>Exams Supported</p>
+      </div>
+      <div class="stat-item">
+        <h3>92%</h3>
+        <p>Accuracy Rate</p>
+      </div>
+      <div class="stat-item">
+        <h3>Free</h3>
+        <p>Forever</p>
+      </div>
+      <div class="stat-item">
+        <h3>Fast</h3>
+        <p>30 Sec Analysis</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FEATURES
+     ============================================ -->
+<section id="features">
+  <div class="section-title">
+    <h2>🔥 Kya Kya Milega?</h2>
+    <p>Sab kuch ek jagah — study smarter not harder</p>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">📄</div>
+      <h3>PDF Analysis</h3>
+      <p>Apne PYQ papers upload karo. AI automatically
+         padhega, samjhega aur analyze karega.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔮</div>
+      <h3>Smart Predictions</h3>
+      <p>Topic patterns dhundh ke predict karta hai
+         ki agle exam mein kya aane ki zyada chance hai.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🎯</div>
+      <h3>Study Heatmap</h3>
+      <p>Red/Yellow/Green system se clearly batata hai
+         kya zaroor padhna hai aur kya skip kar sakte.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📊</div>
+      <h3>Visual Charts</h3>
+      <p>Topic wise probability bars se clearly dikhta hai
+         har topic ka importance level.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📱</div>
+      <h3>Mobile Friendly</h3>
+      <p>Phone pe bhi perfectly kaam karta hai.
+         Kahin bhi kahin se access karo.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">💰</div>
+      <h3>Bilkul Free</h3>
+      <p>Koi subscription nahi. Koi hidden charge nahi.
+         Hamesha ke liye free.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     EXAMS SUPPORTED
+     ============================================ -->
+<section id="exams" style="background: var(--bg-card);
+       border-radius: var(--radius); padding: 3rem 2rem;
+       max-width: 1200px; margin: 0 auto;">
+  <div class="section-title">
+    <h2>📚 Supported Exams</h2>
+    <p>Yeh sab exams ke liye predictions milti hain</p>
+  </div>
+
+  <div style="display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+              gap: 1rem;">
+    {% set exam_list = [
+      ('🎓', 'JEE Main'),
+      ('🏆', 'JEE Advanced'),
+      ('🩺', 'NEET'),
+      ('📜', 'UPSC CSE'),
+      ('💻', 'GATE'),
+      ('📊', 'CAT'),
+      ('🏙️', 'MAH CET MBA'),
+      ('⚗️', 'MHT CET'),
+      ('🏛️', 'MPSC'),
+      ('📝', 'SSC CGL'),
+      ('🏦', 'IBPS PO'),
+      ('⚖️', 'CLAT'),
+      ('💼', 'CA Final'),
+      ('🎖️', 'NDA')
+    ] %}
+
+    {% for icon, exam in exam_list %}
+    <div style="background: var(--bg-main);
+                border: 1px solid var(--border);
+                border-radius: var(--radius-sm);
+                padding: 1rem;
+                text-align: center;
+                transition: var(--transition);"
+         onmouseover="this.style.borderColor='var(--primary)'"
+         onmouseout="this.style.borderColor='var(--border)'">
+      <div style="font-size: 1.8rem; margin-bottom: 0.4rem;">
+        {{ icon }}
+      </div>
+      <div style="font-size: 0.85rem;
+                  font-weight: 600;
+                  color: var(--text-muted);">
+        {{ exam }}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- ============================================
+     ANALYZER
+     ============================================ -->
+<section id="analyzer">
+  <div class="analyzer-wrapper">
+
+    <!-- Header -->
+    <div class="analyzer-header">
+      <h2>🔍 Exam Analyzer</h2>
+      <p>Apna exam chuno aur analysis shuru karo</p>
+    </div>
+
+    <!-- Body -->
+    <div class="analyzer-body">
+
+      <!-- Steps -->
+      <div class="steps">
+        <div class="step active">
+          <div class="step-num">1</div>
+          <div class="step-label">Exam Chuno</div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-label">Mode Chuno</div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-label">Analyze Karo</div>
+        </div>
+      </div>
+
+      <!-- Exam Select -->
+      <div class="form-group">
+        <label class="form-label">📚 Exam Chuno</label>
+        <select class="form-select" id="examSelect">
+          {% for exam in exams %}
+          <option value="{{ exam }}">{{ exam }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <!-- Mode Toggle -->
+      <div class="form-group">
+        <label class="form-label">⚙️ Mode Chuno</label>
+        <div class="mode-toggle">
+          <button class="mode-btn active" data-mode="demo">
+            🎮 Demo Mode
+          </button>
+          <button class="mode-btn" data-mode="pdf">
+            📄 PDF Upload
+          </button>
+        </div>
+      </div>
+
+      <!-- Upload Area -->
+      <div id="uploadSection" style="display: none;">
+        <div class="form-group">
+          <label class="form-label">📎 PDF Papers Upload Karo</label>
+          <div class="upload-area" id="uploadArea">
+            <input
+              type="file"
+              id="fileInput"
+              multiple
+              accept=".pdf"
+            />
+            <div class="upload-icon">📂</div>
+            <h3>PDFs Yahan Drop Karo</h3>
+            <p>Ya click karke select karo •
+               Multiple files allowed •
+               Max 50MB</p>
+            <div class="file-list" id="fileList"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Analyze Button -->
+      <button class="btn btn-primary btn-full btn-lg"
+              id="analyzeBtn">
+        🚀 Analysis Shuru Karo
+      </button>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     RESULTS
+     ============================================ -->
+<section id="results">
+
+  <!-- Results Header -->
+  <div class="results-header">
+    <h2>📊 Analysis Results</h2>
+    <div class="results-meta">
+      <span class="meta-badge" id="resultsExam">JEE Main</span>
+      <span class="meta-badge" id="resultsMode">Demo</span>
+    </div>
+  </div>
+
+  <!-- Stats Cards -->
+  <div class="stats-cards">
+    <div class="stat-card">
+      <h3 id="statTotal">0</h3>
+      <p>Total Topics</p>
+    </div>
+    <div class="stat-card">
+      <h3 id="statHigh" style="color: var(--red);">0</h3>
+      <p>🔴 Zaroor Padho</p>
+    </div>
+    <div class="stat-card">
+      <h3 id="statMedium" style="color: var(--yellow);">0</h3>
+      <p>🟡 Padh Lo</p>
+    </div>
+    <div class="stat-card">
+      <h3 id="statLow" style="color: var(--green);">0</h3>
+      <p>🟢 Skip Kar Sakte</p>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab-btn active"
+            data-tab="heatmap"
+            onclick="switchTab('heatmap')">
+      🔥 Study Heatmap
+    </button>
+    <button class="tab-btn"
+            data-tab="analysis"
+            onclick="switchTab('analysis')">
+      📊 Topic Analysis
+    </button>
+    <button class="tab-btn"
+            data-tab="plan"
+            onclick="switchTab('plan')">
+      📅 Study Plan
+    </button>
+  </div>
+
+  <!-- Tab 1: Heatmap -->
+  <div class="tab-content active" id="heatmapTab">
+    <div class="heatmap-grid">
+
+      <div class="heatmap-col">
+        <h3>🔴 Zaroor Padho</h3>
+        <p>70%+ chance — Skip mat karna!</p>
+        <div id="highTopics"></div>
+      </div>
+
+      <div class="heatmap-col">
+        <h3>🟡 Padh Lo</h3>
+        <p>40-70% chance — Time mile toh padho</p>
+        <div id="mediumTopics"></div>
+      </div>
+
+      <div class="heatmap-col">
+        <h3>🟢 Skip Kar Sakte</h3>
+        <p>40% se kam — Low priority</p>
+        <div id="lowTopics"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Tab 2: Analysis -->
+  <div class="tab-content" id="analysisTab">
+    <div class="progress-list" id="progressList"></div>
+  </div>
+
+  <!-- Tab 3: Study Plan -->
+  <div class="tab-content" id="planTab">
+    <div class="plan-grid">
+      <div class="plan-card">
+        <h3 id="planMustStudy">0</h3>
+        <p>Must Study Topics</p>
+      </div>
+      <div class="plan-card">
+        <h3 id="planTotal">0</h3>
+        <p>Total Topics</p>
+      </div>
+      <div class="plan-card">
+        <h3 id="planTimeSave">0 hrs</h3>
+        <p>Time Bachega</p>
+      </div>
+    </div>
+
+    <div class="top-topics">
+      <h3 style="margin-bottom: 1rem;">
+        🏆 Top 3 Priority Topics
+      </h3>
+      <div id="top3Topics"></div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer>
+  <p>
+    🎯 ExamPredictor AI — Made with ❤️ for Indian Students
+    <br/>
+    <span style="color: var(--primary);">Free Forever</span>
+    • Data-Driven • AI-Powered
+  </p>
+</footer>
+
+<!-- Loading Overlay -->
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="loading-spinner"></div>
+  <div class="loading-text">AI Analysis Chal Raha Hai...</div>
+  <div class="loading-steps">
+    <div class="loading-step">📄 PDF padh raha hai...</div>
+    <div class="loading-step">🧠 Topics identify kar raha hai...</div>
+    <div class="loading-step">🔮 Predictions generate ho rahi hain...</div>
+    <div class="loading-step">✅ Almost done...</div>
+  </div>
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
